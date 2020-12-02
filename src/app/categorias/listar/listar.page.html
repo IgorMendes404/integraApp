@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Categorias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+
+  <ion-item *ngFor="let categoria of listaCategorias">
+    <ion-label>
+      <p><strong>ID: </strong>
+        {{categoria.id}}
+      </p>
+      <p>
+        {{categoria.nome}}
+      </p>
+    </ion-label>
+    <ion-note slot="end" color="ligth">
+      <ion-icon name="create-outline" [routerLink]="'/categorias/altera/' + categoria.id"></ion-icon>
+      <ion-icon name="trash-outiline" (click)="presentAlertConfirm(categoria.id)"></ion-icon>
+    </ion-note>
+  </ion-item>
+
+  <ion-fab vertical="buttom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/categorias/cadastrar" color="sucess">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

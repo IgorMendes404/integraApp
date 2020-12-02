@@ -11,6 +11,18 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'listar',
+    loadChildren: () => import('./categorias/listar/listar.module').then( m => m.ListarPageModule)
+  },
+  {
+    path: 'cadastrar',
+    loadChildren: () => import('./categorias/cadastrar/cadastrar.module').then( m => m.CadastrarPageModule)
+  },
+  {
+    path: 'alterar',
+    loadChildren: () => import('./categorias/alterar/alterar.module').then( m => m.AlterarPageModule)
+  },
 ];
 
 @NgModule({
